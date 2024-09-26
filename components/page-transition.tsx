@@ -19,7 +19,7 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
           opacity: 0,
           transition: { delay: 1, duration: 1, ease: "easeIn" },
         }}
-        className="fixed top-0 z-30 w-screen h-screen pointer-events-none bg-white"
+        className="fixed top-0 z-30 xL:z-40 w-screen h-screen pointer-events-none bg-white"
       />
       {children}
     </AnimatePresence>

@@ -1,8 +1,18 @@
+import { FaXTwitter } from "react-icons/fa6";
+import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa";
+
 export const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Treatments", href: "/treatments" },
   { name: "Contact", href: "/contact" },
+];
+
+export const socialLinks = [
+  { name: "Youtube", href: "https://www.youtube.com", icon: FaYoutube },
+  { name: "Facebook", href: "https://www.facebook.com", icon: FaFacebook },
+  { name: "Twitter", href: "https://x.com", icon: FaXTwitter },
+  { name: "Instagram", href: "https://www.instagram.com", icon: FaInstagram },
 ];
 
 export const animations = {
