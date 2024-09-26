@@ -1,32 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-// import { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
 import { Nav } from "@/components/nav";
 import { Logo } from "@/components/logo";
+import { TopBar } from "@/components/top-bar";
 import { MobileNav } from "@/components/mobile-nav";
-// import { CursorContext, CursorContextType } from "@/components/cursor-context";
+import { CursorContext, CursorContextType } from "@/components/cursor-context";
 
 export const Header = () => {
   const [mobileNav, setMobileNav] = useState<boolean>(false);
-  // const context = useContext<CursorContextType | undefined>(CursorContext);
+  const context = useContext<CursorContextType | undefined>(CursorContext);
 
-  // if (!context) {
-  //   throw new Error("CursorContext not provided");
-  // }
+  if (!context) {
+    throw new Error("CursorContext not provided");
+  }
 
-  // const { mouseEnterHandler, mouseLeaveHandler } = context;
+  const { mouseEnterHandler, mouseLeaveHandler } = context;
 
   return (
     <header className="pb-6 xl:pb-[50px] fixed z-40 w-full bg-accent-100 xl:bg-transparent">
-      <div className="bg-secondary-100 mb-6 xl:mb-[50px] xl:h-[50px] py-4 xl:py-0">
-        topbar
-      </div>
+      <TopBar />
       <div className="container mx-auto flex justify-between items-center px-6">
-        <Logo />
+        <motion.div
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
+        >
+          <Logo />
+        </motion.div>
         <div
           className="cursor-pointer xl:hidden"
           onClick={() => setMobileNav(!mobileNav)}
@@ -40,9 +43,13 @@ export const Header = () => {
         >
           <MobileNav setMobileNav={setMobileNav} />
         </motion.div>
-        <div className="hidden xl:block">
+        <motion.div
+          onMouseEnter={mouseEnterHandler}
+          onMouseLeave={mouseLeaveHandler}
+          className="hidden xl:block"
+        >
           <Nav />
-        </div>
+        </motion.div>
       </div>
     </header>
   );

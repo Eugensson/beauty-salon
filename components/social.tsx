@@ -18,7 +18,7 @@ export const Social: React.FC<SocialProps> = ({ containerStyles }) => {
             rel="noreferrer"
             aria-label={`Link to ${name}`}
           >
-            <Icon size={24} />
+            <Icon size={20} />
           </Link>
         </li>
       ))}
