@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Marcellus, Montserrat } from "next/font/google";
 
+import { Header } from "@/components/header";
+import { Transition } from "@/components/transition";
+import { CursorProvider } from "@/components/cursor-context";
+import { PageTransition } from "@/components/page-transition";
+
 import "./globals.css";
 
 const marcellus = Marcellus({
@@ -30,7 +35,11 @@ export default function RootLayout({
       <body
         className={`${marcellus.variable} ${montserrat.variable} antialiased`}
       >
-        {children}
+        <CursorProvider>
+          <Transition />
+          <Header />
+          <PageTransition>{children}</PageTransition>
+        </CursorProvider>
       </body>
     </html>
   );

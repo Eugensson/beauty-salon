@@ -30,16 +30,12 @@ const config: Config = {
         },
         secondary: {
           DEFAULT: "#f2dfce",
+          "100": "#cea39c",
         },
         accent: {
           DEFAULT: "#f19687",
           "100": "#f2d5c5",
         },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
